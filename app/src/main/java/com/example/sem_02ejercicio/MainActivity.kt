@@ -12,14 +12,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.sem_02ejercicio.ui.theme.ActividadTheme // Asegúrate de tener este Theme en tu proyecto
+import com.example.sem_02ejercicio.ui.theme.ActividadTheme 
 
-// 🔹 Enum para distinguir tipo de transacción
+
 enum class TipoTransaccion {
     GASTO, INGRESO
 }
 
-// 🔹 Clase de datos para la transacción
+
 data class Transaccion(
     val titulo: String,
     val fecha: String,
@@ -27,7 +27,7 @@ data class Transaccion(
     val tipo: TipoTransaccion
 )
 
-// 🔹 Colores personalizados
+
 val AzulGasto = Color(0xFF1976D2)
 val VerdeIngreso = Color(0xFF388E3C)
 
@@ -55,18 +55,18 @@ fun ItemTransaccion(transaccion: Transaccion) {
                 Text(
                     text = transaccion.titulo,
                     style = MaterialTheme.typography.titleMedium,
-                    color = Color.Black   // 🔹 siempre negro
+                    color = Color.Black   
                 )
                 Text(
                     text = transaccion.fecha,
                     style = MaterialTheme.typography.bodySmall,
-                    color = Color.Gray    // 🔹 siempre gris
+                    color = Color.Gray    
                 )
             }
             Text(
                 text = "S/ ${"%.2f".format(transaccion.monto)}",
                 style = MaterialTheme.typography.titleMedium,
-                color = colorMonto      // 🔹 solo el número cambia de color
+                color = colorMonto      
             )
         }
     }
@@ -83,7 +83,7 @@ fun ListaTransacciones(transacciones: List<Transaccion>) {
     }
 }
 
-// 🔹 Pantalla principal con datos de prueba
+// 🔹 Pantalla principal con datos para ejemplos
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainScreen() {
@@ -115,14 +115,14 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            ActividadTheme { // Usa tu theme personalizado aquí
+            ActividadTheme { 
                 MainScreen()
             }
         }
     }
 }
 
-// 🔹 Preview para Compose
+
 @Preview(showBackground = true)
 @Composable
 fun PreviewMainScreen() {
